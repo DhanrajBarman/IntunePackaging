@@ -1,0 +1,23 @@
+# Define the registry uninstall paths (for both 32-bit and 64-bit apps)
+$UninstallPaths = @(
+    "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\*",
+    "HKLM:\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Uninstall\*"
+)
+
+foreach ($path in $UninstallPaths) {
+    $apps = Get-ItemProperty $path -ErrorAction SilentlyContinue | Where-Object {
+        $_.DisplayName -like "SAP GUI*"
+    }
+
+    foreach ($app in $apps) {
+        # Detect any SAP GUI version that starts with 7
+        if ($app.DisplayVersion -match "^7\.[0-9]") {
+            Write-Host "SAP GUI Detected: $($app.DisplayName) $($app.DisplayVersion)"
+            exit 0  # Detection successful
+        }
+    }
+}
+
+# If no SAP GUI 7.x version found
+Write-Host "SAP GUI 7.x Not Detected"
+exit 1  # Detection failed
