@@ -1,0 +1,59 @@
+<#
+.SYNOPSIS
+    Uninstall SAP GUI silently using NwSapSetup.exe
+.DESCRIPTION
+    Script for SCCM "Run Script" or Package deployment.
+    Logs to C:\Windows\Logs\Software
+#>
+
+$SAPSetupPath = "C:\Program Files (x86)\SAP\SapSetup\Setup\NwSapSetup.exe"
+$Arguments    = '/Product="SAPGUI" /all /Silent /Uninstall'
+
+# Logging
+$LogFolder = "C:\Windows\Logs\Software"
+if (!(Test-Path $LogFolder)) {
+    New-Item -Path $LogFolder -ItemType Directory -Force | Out-Null
+}
+$LogFile = Join-Path $LogFolder "SAPGUI_Uninstall_$(Get-Date -Format yyyyMMdd_HHmmss).log"
+
+Function Write-Log {
+    param([string]$Message)
+    $ts = (Get-Date -Format "yyyy-MM-dd HH:mm:ss")
+    $entry = "$ts : $Message"
+    Write-Output $entry
+    Add-Content -Path $LogFile -Value $entry
+}
+
+Write-Log "=== SAP GUI Uninstall Script Started ==="
+Write-Log "Installer: $SAPSetupPath"
+Write-Log "Arguments: $Arguments"
+
+try {
+    if (Test-Path $SAPSetupPath) {
+        Write-Log "Found NwSapSetup.exe at $SAPSetupPath"
+        Write-Log "Starting SAP GUI uninstall..."
+
+        $process = Start-Process -FilePath $SAPSetupPath -ArgumentList $Arguments -Wait -PassThru
+
+        Write-Log "Process finished with exit code $($process.ExitCode)"
+
+        if ($process.ExitCode -eq 0) {
+            Write-Log "SAP GUI uninstalled successfully."
+            exit 0
+        }
+        else {
+            Write-Log "Uninstall failed with exit code $($process.ExitCode)"
+            exit $process.ExitCode
+        }
+    }
+    else {
+        Write-Log "ERROR: NwSapSetup.exe not found at $SAPSetupPath"
+        exit 1
+    }
+}
+catch {
+    Write-Log "ERROR: $($_.Exception.Message)"
+    exit 1
+}
+
+Write-Log "=== SAP GUI Uninstall Script Completed ==="
