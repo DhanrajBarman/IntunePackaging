@@ -34,4 +34,4 @@ PSChildName         : {E34459DF-205F-403F-9694-87B46C22BAC3}
 PSDrive             : HKLM
 PSProvider          : Microsoft.PowerShell.Core\Registry
 
-
+MsiExec.exe /X {E34459DF-205F-403F-9694-87B46C22BAC3} /QN
