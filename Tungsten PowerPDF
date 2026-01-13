@@ -1,0 +1,37 @@
+PS C:\Users\test> Get-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\*" `
+    -ErrorAction SilentlyContinue |
+    Where-Object { $_.DisplayName -like "*PDF*" } 
+   # Select-Object DisplayName, DisplayVersion
+
+
+AuthorizedCDFPrefix : 
+Comments            : 
+Contact             : https://www.tungstenautomation.com/products/productivity/support
+DisplayVersion      : 25.3.0.0.25517
+HelpLink            : https://www.tungstenautomation.com/products/productivity/support
+HelpTelephone       : 
+InstallDate         : 20260113
+InstallLocation     : C:\Program Files\Tungsten\Power PDF 2025\
+InstallSource       : C:\Users\test\Desktop\unzip\System64\
+ModifyPath          : MsiExec.exe /I{E34459DF-205F-403F-9694-87B46C22BAC3}
+Publisher           : Tungsten Automation
+Readme              : 
+Size                : 
+EstimatedSize       : 1329352
+UninstallString     : MsiExec.exe /I{E34459DF-205F-403F-9694-87B46C22BAC3}
+URLInfoAbout        : www.tungstenautomation.com
+URLUpdateInfo       : 
+VersionMajor        : 25
+VersionMinor        : 3
+WindowsInstaller    : 1
+Version             : 419627008
+Language            : 0
+DisplayName         : Tungsten Power PDF Business
+PSPath              : Microsoft.PowerShell.Core\Registry::HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\{E34
+                      459DF-205F-403F-9694-87B46C22BAC3}
+PSParentPath        : Microsoft.PowerShell.Core\Registry::HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall
+PSChildName         : {E34459DF-205F-403F-9694-87B46C22BAC3}
+PSDrive             : HKLM
+PSProvider          : Microsoft.PowerShell.Core\Registry
+
+
