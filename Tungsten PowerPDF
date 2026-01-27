@@ -4,6 +4,7 @@ PS C:\Users\test> Get-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows\Curre
    # Select-Object DisplayName, DisplayVersion
 
 ## Link to download https://eu-transfer.harman.com/link/KZs12f6rnd8prPdgZKAneE
+https://transfer.harman.com/link/oeFUXoR0x6gEXLbPHQ08qR
 AuthorizedCDFPrefix : 
 Comments            : 
 Contact             : https://www.tungstenautomation.com/products/productivity/support
