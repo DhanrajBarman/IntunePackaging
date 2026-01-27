@@ -3,7 +3,7 @@ PS C:\Users\test> Get-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows\Curre
     Where-Object { $_.DisplayName -like "*PDF*" } 
    # Select-Object DisplayName, DisplayVersion
 
-
+## Link to download https://eu-transfer.harman.com/link/KZs12f6rnd8prPdgZKAneE
 AuthorizedCDFPrefix : 
 Comments            : 
 Contact             : https://www.tungstenautomation.com/products/productivity/support
