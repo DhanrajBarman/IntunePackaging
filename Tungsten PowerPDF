@@ -25,6 +25,9 @@ We have an AD group "hii_o365_Tungsten_PowerPDF" which we can use for deploying 
 Thanks and regards,
 Nils
 
+msiexec.exe /i "Kofax Power PDF Advanced.msi" TRANSFORMS=admin_customSettings.mst
+msiexe.exe /x {14A2A487-F746-4A7E-8792-A1C501FD3825}
+
 
 
 
