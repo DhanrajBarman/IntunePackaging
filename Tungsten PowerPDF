@@ -5,6 +5,31 @@ PS C:\Users\test> Get-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows\Curre
 
 ## Link to download https://eu-transfer.harman.com/link/KZs12f6rnd8prPdgZKAneE
 https://transfer.harman.com/link/oeFUXoR0x6gEXLbPHQ08qR
+
+Hi all,
+(++ @Sonnappa, Hombegowda, he will take over the coordination for the package)
+
+So, took them some time to deliver the key... The serial number for us is as follows: AV09Z-K13-TVGD-C7DV-J8
+
+However, as we have received a company-wide key, we need to use another installer. The new installer and the latest patch is available in this folder:  Tungsten Power-PDF  The main installer is in the folder "KofaxPowerPDF.....", whereas the patch is in folder "TungstenPowerPDF....5.1.1"
+
+Here are some configurations we should set during the installation:
+•	Username: SAM@Harman.com
+•	Company name: Harman International Industries
+•	"Launch Create Assistant at Startup" -> NO
+•	"Create shortcut for Kofax to Desktop" -> Yes
+•	"Set Kofax as the Default application for PDF" -> NO (Adobe Reader should still be the default PDF app for all)
+
+We have an AD group "hii_o365_Tungsten_PowerPDF" which we can use for deploying the package to the users after testing. Currently, the group only holds two users, we will populate it with all eligible users in the next days.
+
+Thanks and regards,
+Nils
+
+
+
+
+
+
 AuthorizedCDFPrefix : 
 Comments            : 
 Contact             : https://www.tungstenautomation.com/products/productivity/support
