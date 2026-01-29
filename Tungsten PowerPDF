@@ -10,6 +10,17 @@ The client installation procedure always requires administrative privileges and 
 computer installation context (ALLUSERS=1).
 https://docshield.tungstenautomation.com/PowerPDF/en_US/5.1.0-cyu29ubkgp/print/KofaxPowerPDFNetworkInstallationGuide_EN.pdf
 
+Hi Michal, 
+
+We are still working on this. Progress is we are  able to embed the license into the setup file. Currently performing local tests.
+
+Also, from  the Kofax network installation documentation , https://docshield.tungstenautomation.com/PowerPDF/en_US/5.1.0-cyu29ubkgp/print/KofaxPowerPDFNetworkInstallationGuide_EN.pdf
+The client installation procedure always requires administrative privileges and must run with a per
+computer installation context (ALLUSERS=1), 
+
+Therefore, we have to target computers instead of users in the AD group: hii_o365_Tungsten_PowerPDF 
+
+
 Hi all,
 (++ @Sonnappa, Hombegowda, he will take over the coordination for the package)
 
