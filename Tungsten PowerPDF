@@ -20,7 +20,20 @@ computer installation context (ALLUSERS=1),
 
 Therefore, we have to target computers instead of users in the AD group: hii_o365_Tungsten_PowerPDF 
 
+Hi Michal,
 
+We are still working on this. The current progress is that we have successfully embedded the license into the setup file and are now performing local testing.
+
+Additionally, based on the Kofax Network Installation documentation
+(https://docshield.tungstenautomation.com/PowerPDF/en_US/5.1.0-cyu29ubkgp/print/KofaxPowerPDFNetworkInstallationGuide_EN.pdf
+),
+the client installation must be executed with administrative privileges and requires a per-computer installation context (ALLUSERS=1).
+
+Because of this requirement, we will need to target computer objects rather than users in the AD group hii_o365_Tungsten_PowerPDF.
+
+Please let us know if you have any questions.
+
+Best regards,
 Hi all,
 (++ @Sonnappa, Hombegowda, he will take over the coordination for the package)
 
