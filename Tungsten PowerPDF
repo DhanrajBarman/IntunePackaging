@@ -6,6 +6,10 @@ PS C:\Users\test> Get-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows\Curre
 ## Link to download https://eu-transfer.harman.com/link/KZs12f6rnd8prPdgZKAneE
 https://transfer.harman.com/link/oeFUXoR0x6gEXLbPHQ08qR
 
+The client installation procedure always requires administrative privileges and must run with a per
+computer installation context (ALLUSERS=1).
+https://docshield.tungstenautomation.com/PowerPDF/en_US/5.1.0-cyu29ubkgp/print/KofaxPowerPDFNetworkInstallationGuide_EN.pdf
+
 Hi all,
 (++ @Sonnappa, Hombegowda, he will take over the coordination for the package)
 
